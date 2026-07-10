@@ -40,21 +40,30 @@ The top 100 customers (out of ~5,900 total) account for 37.6% of total revenue, 
 ### 5. RFM Segmentation Identifies Churn Risk
 RFM (Recency, Frequency, Monetary) segmentation showed most top-spending customers are "Champions" — recent, frequent, high-value buyers. However, the analysis also surfaced a high-value outlier: customer 12346, who has spent £77,556 historically but hasn't purchased in 325 days, flagging them as a lapsed high-value customer worth targeted re-engagement.
 
+## Interactive Dashboard
+An interactive Tableau dashboard was built on top of this same dataset, bringing the key findings above into a single, filterable view — including KPI summary cards, the monthly revenue trend, top 10 customers, and top international markets. Clicking a point on the revenue trend line filters the other charts to that month.
+
+![UK Retail Sales Dashboard](UK%20Retail%20Dashboard.png)
+
+**[View the live interactive dashboard on Tableau Public →](https://public.tableau.com/app/profile/yunusa.jibrin/viz/UKOnlineRetailSalesDashboard_17837109361810/Dashboard1?publish=yes)**
+
 ## Summary
-This analysis of ~780,000 UK online retail transactions revealed strong seasonal demand (peaking in November), a healthy customer retention profile (72% repeat purchase rate), and meaningful revenue concentration among top customers (top 100 customers = 37.6% of revenue). RFM segmentation further identified specific high-value customers at risk of churn, providing a basis for targeted retention campaigns.
+This analysis of ~780,000 UK online retail transactions revealed strong seasonal demand (peaking in November), a healthy customer retention profile (72% repeat purchase rate), and meaningful revenue concentration among top customers (top 100 customers = 37.6% of revenue). RFM segmentation further identified specific high-value customers at risk of churn, providing a basis for targeted retention campaigns. These findings were also brought together in an interactive Tableau dashboard for at-a-glance, filterable exploration.
 
 ## Tools Used
 - **PostgreSQL** — data storage and querying
 - **SQL** — CTEs, window functions (`RANK`, `ROW_NUMBER`, `NTILE`, `SUM() OVER()`), aggregations, `CASE` segmentation
 - **Python (pandas)** — data cleaning and preparation
 - **DBeaver** — database management and query execution
+- **Tableau Public** — interactive dashboard and data visualization
 
 ## Files
 - `analysis_queries.sql` — all SQL queries with business context comments
 - `data_cleaning.ipynb` — Python data cleaning and preparation notebook
 - `visualizations.ipynb` — connects to PostgreSQL and generates the charts below
 - `chart_monthly_revenue.png`, `chart_revenue_concentration.png`, `chart_customer_segments.png` — supporting charts
+- `UK Retail Dashboard.png` — screenshot of the interactive Tableau dashboard
 - `README.md` — this file
 
 ## Next Steps
-Potential extensions to this analysis include: building an interactive Power BI/Tableau dashboard on top of these queries, forecasting future monthly revenue, and running a full RFM segmentation across the entire customer base (not just top spenders) to build a prioritised churn-prevention target list.
+Potential extensions to this analysis include: building an equivalent Power BI dashboard, forecasting future monthly revenue, and running a full RFM segmentation across the entire customer base (not just top spenders) to build a prioritised churn-prevention target list.
