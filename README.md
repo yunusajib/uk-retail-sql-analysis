@@ -22,11 +22,17 @@ Cleaning was performed in Python (pandas), with the cleaned data loaded into Pos
 ### 1. Revenue Seasonality
 Revenue rises sharply from September and peaks in November (£1.03M–£1.17M) in both 2010 and 2011, consistent with Christmas gift-buying behaviour. February is consistently the weakest month. This suggests inventory and marketing spend should ramp up from September to capture peak seasonal demand.
 
+![Monthly Revenue Trend](chart_monthly_revenue.png)
+
 ### 2. Customer Revenue Concentration
 The top 100 customers (out of ~5,900 total) account for 37.6% of total revenue, with the single highest-spending customer contributing 3.3% alone. This concentration suggests the business would benefit from a formal key-account management or loyalty programme for top-tier customers, and should closely monitor churn risk within this small group, since losing even a handful would materially impact revenue.
 
+![Cumulative Revenue by Customer Rank](chart_revenue_concentration.png)
+
 ### 3. Customer Retention
 72.4% of customers are repeat buyers (2+ orders), with 30.6% classified as "loyal" (6+ orders). Only 27.6% are one-time purchasers. This indicates a strong underlying retention base, suggesting future efforts should focus on converting one-time buyers into repeat customers rather than fixing a broad retention problem.
+
+![Customer Segmentation by Purchase Frequency](chart_customer_segments.png)
 
 ### 4. Top Products Vary by Country
 "WHITE HANGING HEART T-LIGHT HOLDER" and "REGENCY CAKESTAND 3 TIER" are consistent bestsellers across the UK and Germany. Notably, "POSTAGE" and "Manual" appear as top revenue lines for France and Germany — these are administrative entries, not products, and were flagged as a data quality consideration rather than a genuine sales insight. A production analysis would exclude these from product-performance reporting.
@@ -46,6 +52,8 @@ This analysis of ~780,000 UK online retail transactions revealed strong seasonal
 ## Files
 - `analysis_queries.sql` — all SQL queries with business context comments
 - `data_cleaning.ipynb` — Python data cleaning and preparation notebook
+- `visualizations.ipynb` — connects to PostgreSQL and generates the charts below
+- `chart_monthly_revenue.png`, `chart_revenue_concentration.png`, `chart_customer_segments.png` — supporting charts
 - `README.md` — this file
 
 ## Next Steps
